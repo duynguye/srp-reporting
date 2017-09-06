@@ -1,0 +1,5 @@
+.breaches-container {
+    overflow-y: scroll;
+    margin-top: $content-margin;
+    height: calc(100% - (#{$content-margin} + 130px));
+}

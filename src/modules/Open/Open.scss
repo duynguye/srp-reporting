@@ -1,0 +1,158 @@
+$scrollbarWidth: 15px;
+$totalColumns: 6;
+$columnPadding: ($scrollbarWidth / $totalColumns);
+
+.open-container {
+    overflow: hidden;
+    height: 100%;
+    margin-top: 52.5px;
+    @include transparent-background($color-grey, 0.4);
+
+    .open-header {
+        height: 20px;
+    }
+
+    .open-table {
+        height: calc(100% - 20px);
+    }
+
+    table {
+        width: 100%;
+        height: calc(100% - 20px);
+        border-collapse: collapse;
+        table-layout: fixed;
+
+        tr {
+            display: block;
+            width: 100%;
+            height: 30px;
+
+            th {
+                display: inline-block;
+                height: 30px;
+                line-height: 30px;
+                cursor: pointer;
+                transition: background-color 100ms linear;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.4);
+                }
+
+                &:nth-child(1) {
+                    min-width: 10%;
+                }
+
+                &:nth-child(2) {
+                    min-width: 10%;
+                }
+
+                &:nth-child(3) {
+                    width: 40%;
+                }
+
+                &:nth-child(4) {
+                    min-width: 15%;
+                }
+
+                &:nth-child(5) {
+                    min-width: 10%;
+                }
+
+                &:nth-child(6) {
+                    width: 9%;
+                }
+            }
+
+            td {
+                text-align: center;
+                display: inline-block;
+                height: 30px;
+                line-height: 30px;
+
+                &:nth-child(1) {
+                    min-width: calc(10% + #{$columnPadding});
+                }
+
+                &:nth-child(2) {
+                    min-width: calc(10% + #{$columnPadding});
+                }
+
+                &:nth-child(3) {
+                    text-align: left;
+                    width: calc(40% + #{$columnPadding});
+                }
+
+                &:nth-child(4) {
+                    min-width: calc(15% + #{$columnPadding});
+                }
+
+                &:nth-child(5) {
+                    min-width: calc(10% + #{$columnPadding});
+                }
+
+                &:nth-child(6) {
+                    width: calc(9% + #{$columnPadding});
+                }
+            }
+        }
+
+        tr:nth-child(2n) {
+            border: none;
+            @include transparent-background($color-grey, 0.6);
+        }
+
+        thead {
+            display: block;
+            width: 100%;
+            padding: 0 17px 0 0;
+        }
+
+        tbody {
+            display: block;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            width: 100%;
+            height: calc(100% - 188.5px);
+            padding-bottom: 10px;
+
+            @media (max-width: 1300px) and (min-width: 901px) {
+                height: calc(100% - 175.5px);
+            }
+
+            @media (max-width: 900px) {
+                height: calc(100% - 164.5px);
+            }
+        }
+    }
+
+    a {
+        color: white;
+        transition: color 100ms linear;
+
+        &:hover {
+            color: #00B7FF;
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.35);
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+    &:active {
+        box-shadow: inset 0 0 6px rgba(0,0,0,.35);
+    }
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}

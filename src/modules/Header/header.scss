@@ -1,0 +1,88 @@
+header {
+	@extends %clearfix;
+	@include transparent-background($color-grey, 0.4);
+	width: 100%;
+	height: $header-height;
+	margin: 0;
+	color: $color-white;
+    display: flex;
+    flex-direction: row;
+	
+	.logo {
+		width: auto;
+		height: 100%;
+	}
+
+    .logo-shielded {
+        @include transparent-background($color-white, 0.6);
+    }
+
+    .home-link {
+        display: inline-flex;
+
+        a {
+            color: white;
+            text-decoration: none;
+            height: 100%;
+            line-height: 70px;
+            font-size: 1.25rem;
+            font-weight: 100;
+        }
+    }
+
+    .home-link-shielded {
+        @include transparent-background($color-white, 0.6);
+        margin-right: 35px;
+
+        &::after {
+            content: '';
+            display: inline-flex;
+            width: 0;
+            height: 0;
+            transform: translateX(100%);
+
+            border-top: 35px solid transparent;
+            border-bottom: 35px solid transparent;
+            border-left: 35px solid rgba(255, 255, 255, 0.4);
+        }
+    }
+
+    .home-link-shielded-with-branch {
+        &::after {
+            border-top: 35px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 35px solid rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    .header-category {
+        line-height: 70px;
+        font-size: 1.25rem;
+        font-weight: 100;
+        padding-left: 20px;
+        display: inline-flex;
+    }
+
+    .header-category-shielded {
+        background-color: rgba(255, 255, 255, 0.2);
+
+        &::after {
+            content: '';
+            display: inline-flex;
+            width: 0;
+            height: 0;
+            transform: translateX(100%);
+
+            border-top: 35px solid transparent;
+            border-bottom: 35px solid transparent;
+            border-left: 35px solid rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    .header-branch {
+        line-height: 70px;
+        font-size: 1.25rem;
+        font-weight: 100;
+        text-transform: capitalize;
+        margin-left: 50px;
+    }
+}

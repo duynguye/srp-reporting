@@ -1,0 +1,20 @@
+%clearfix {
+	&:after {
+		display: table;
+		width: 100%;
+		clear: both;
+	}
+}
+
+%clickable {
+	cursor: pointer;
+    transition: color 100ms linear;
+
+	&:hover {
+		color: #00B7FF;
+	}
+}
+
+@mixin transparent-background($color, $alpha) {
+	background: linear-gradient(to right, transparentize($color, $alpha) 0%, transparentize($color, $alpha) 100%);
+}

@@ -1,0 +1,22 @@
+.container {
+    margin: $content-margin;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    height: calc(100% - #{$header-height + $content-margin * 2});
+}
+
+.request-type-list {
+    @extend %section;
+    min-height: 100%;
+    box-sizing: border-box;
+    //display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    // table-layout: fixed;
+
+    tbody {
+        width: 100%;
+    }
+}

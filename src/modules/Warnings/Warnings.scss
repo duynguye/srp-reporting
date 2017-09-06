@@ -1,0 +1,38 @@
+.warnings-container {
+    @extend .open-container;
+
+    table thead tr th {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        cursor: pointer;
+        transition: background-color 100ms linear;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        &:nth-child(1) { width: 10%; }
+        &:nth-child(2) { width: 10%; }
+        &:nth-child(3) { width: 35%;}
+        &:nth-child(4) { width: 5%; min-width: 0;}
+        &:nth-child(5) { width: 12%; }
+        &:nth-child(6) { width: 10%; }
+        &:nth-child(7) { width: 15%; }
+    }
+
+    table tbody tr td {
+        text-align: center;
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+
+        &:nth-child(1) { width: calc(10% + #{$columnPadding}); }
+        &:nth-child(2) { width: calc(10% + #{$columnPadding}); }
+        &:nth-child(3) { text-align: left; width: calc(35% + #{$columnPadding}); }
+        &:nth-child(4) { width: calc(5% + #{$columnPadding}); min-width: 0;}
+        &:nth-child(5) { text-align: left; width: calc(12% + #{$columnPadding}); }
+        &:nth-child(6) { width: calc(10% + #{$columnPadding}); }
+        &:nth-child(7) { width: calc(15% + #{$columnPadding}); }
+    }
+}

@@ -1,0 +1,7 @@
+%section {
+	@include transparent-background($color-grey, 0.4);
+	padding-top: $content-margin;
+	padding-right: $content-margin;
+	padding-bottom: $content-margin;
+	padding-left: $content-margin;
+}

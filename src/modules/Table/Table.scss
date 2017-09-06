@@ -1,0 +1,76 @@
+.table-container {
+    width: 100%;
+    margin-bottom: $content-margin;
+    overflow: hidden;
+
+    .table-title {
+        background-color: rgba(0, 0, 0, 0.7);
+        font-size: 20px;
+        padding: 10px 30px;
+        position: relative;
+        z-index: 100;
+        cursor: pointer;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        @include transparent-background($color-grey, 0.4);
+        table-layout: fixed;
+        display: block;
+        position: relative;
+        transition: all 150ms linear;
+
+        tr {
+            display: block;
+            width: 100%;
+
+            th {
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.4);
+                }
+            }
+
+            th, td {
+                display: inline-block;
+                height: 30px;
+                line-height: 30px;
+                cursor: pointer;
+                transition: background-color 100ms linear;
+                text-transform: capitalize;
+                text-align: center;
+
+                //&:nth-child(1) { width: 10%; }
+                //&:nth-child(2) { width: 10%; }
+                //&:nth-child(3) { width: 25%; }
+                //&:nth-child(4) { width: 15%; }
+                //&:nth-child(5) { width: 17%; }
+                //&:nth-child(6) { width: 10%; }
+                //&:nth-child(7) { width: 10%; }
+            }
+
+            td {
+                cursor: default;
+            }
+
+            &:nth-child(2n) {
+                border: none;
+                @include transparent-background($color-grey, 0.6);
+            }
+        }
+
+        thead, tbody {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    a {
+        color: white;
+        transition: color 100ms linear;
+
+        &:hover {
+            color: #00B7FF;
+        }
+    }
+}

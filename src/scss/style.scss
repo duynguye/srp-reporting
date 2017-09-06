@@ -1,0 +1,37 @@
+@import 'mixins.scss';
+@import 'variables.scss';
+@import '../modules/Header/header.scss';
+@import '../modules/content/content.scss';
+@import '../modules/section/section.scss';
+@import '../pages/Overview/Overview.scss';
+@import '../pages/Category/Category.scss';
+@import '../modules/Open/Open.scss';
+@import '../modules/Table/Table';
+@import '../modules/Breaches/Breaches';
+@import '../modules/Warnings/Warnings';
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	background: url(/images/background.png) no-repeat fixed;
+	background-size: 100% 100%;
+	font-family: Helvetica, Arial, sans-serif;
+	color: $color-white;
+
+	#root, .app, .app-container {
+		height: 100%;
+	}
+
+}
+
+.switch-wrapper {
+    position: relative;
+}
+
+.switch-wrapper > div {
+    position: absolute;
+}
